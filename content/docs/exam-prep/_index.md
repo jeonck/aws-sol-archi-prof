@@ -18,6 +18,7 @@ weight: 5
 5. **[추천 학습 자료](recommended-resources)** — Skill Builder, Udemy, Tutorials Dojo, 공식 백서, re:Invent
 6. **[실전 문제 풀이 기술](real-exam-tactics)** — 키워드 매핑, 긴 지문 스키밍, 2~3회독 전략
 7. **[SAP-C02 샘플 문제 10선](sap-sample-questions)** — 실제 시험과 동일한 유형의 샘플 문제 10선 및 상세 해설
+8. **[AWS 아키텍처 핵심 원리와 제약](architecture-principles)** — AWS 설계 철학 및 자원 할당량(Quota) 제한 등 핵심 설계 원리
 
 {{< cards >}}
   {{< card link="saa-exam-overview" title="SAA-C03 시험 개요" subtitle="130분, 65문제, 등록 방법과 출제 비중" icon="academic-cap" >}}
@@ -27,6 +28,7 @@ weight: 5
   {{< card link="recommended-resources" title="추천 학습 자료" subtitle="Skill Builder, Udemy, Tutorials Dojo, 백서" icon="book-open" >}}
   {{< card link="real-exam-tactics" title="실전 문제 풀이 기술" subtitle="키워드 매핑, 스키밍, 회독 전략" icon="lightning-bolt" >}}
   {{< card link="sap-sample-questions" title="SAP-C02 샘플 문제 10선" subtitle="실제 유형의 문제 풀이 및 상세 해설 확인" icon="annotation" >}}
+  {{< card link="architecture-principles" title="AWS 아키텍처 핵심원리와 제약" subtitle="할당량 자동 증설 한계 등 설계 철학과 원리 해설" icon="adjustments" >}}
 {{< /cards >}}
 
 {{< callout type="info" >}}
