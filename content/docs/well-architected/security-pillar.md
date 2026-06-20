@@ -37,5 +37,5 @@ weight: 2
 보안 사고는 "발생하지 않기를 바라는 것"이 아니라 "발생했을 때 빠르게 대응할 수 있도록 미리 준비하는 것"이 현실적인 접근입니다. GuardDuty와 Security Hub로 탐지 체계를 갖추고, 사고 발생 시 격리할 계정/리소스를 사전에 정의한 자동화된 대응 플레이북(예: EventBridge + Lambda로 침해된 IAM 자격 증명 자동 비활성화)을 준비해두는 것이 권장됩니다.
 
 {{< callout type="info" >}}
-**SAA 연결**: 이 보안 원칙들을 실제 아키텍처에 적용하는 구체적인 사례는 [SAA: 보안 아키텍처](../../saa/secure-architectures/)에서 다룹니다. SAP 수준에서 GuardDuty, Security Hub, Config를 조직 전체에 적용하는 방법은 [SAP: 고급 보안과 컴플라이언스](../../sap/security-compliance-advanced/)를 참고하세요.
+**SAA 연결**: 이 보안 원칙들을 실제 아키텍처에 적용하는 구체적인 사례는 [SAA: 보안 아키텍처](../../saa/secure-architectures/)에서 다룹니다. SAP 수준에서 GuardDuty, Security Hub, Config를 조직 전체에 적용하는 방법은 [SAP 도메인 1: 보안 제어 규정](../../sap/domain1-organizational-complexity/)을 참고하세요.
 {{< /callout >}}

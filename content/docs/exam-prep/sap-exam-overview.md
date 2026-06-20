@@ -42,6 +42,8 @@ SAP-C02 문제의 전형적인 구조는 다음과 같습니다.
 SAP-C02 응시를 고려하고 있다면, SAA 합격 직후 바로 도전하기보다 실무에서 최소 6개월~1년 이상 AWS 아키텍처 설계나 운영 경험을 쌓은 뒤 응시하는 것이 일반적으로 권장됩니다. 경험이 부족하다면 본 로드맵의 **[③ Solutions Architect Professional](../../sap/)** 섹션의 각 주제를 콘솔에서 직접 구성해보며 경험을 보완하세요.
 {{< /callout >}}
 
+시험이 실제로 무엇을 도메인별로 평가하는지, 그리고 각 도메인이 이 로드맵의 어느 페이지와 연결되는지는 **[SAP-C02 시험 청사진](../sap-exam-domains/)** 에서 표와 다이어그램으로 정리했습니다.
+
 ## 실전 감각 채우기
 
-SAP-C02 학습의 마지막 단계는 **[지속적 개선](../../sap/continuous-improvement/)** 에서 다루는 Well-Architected Tool 기반 정기 리뷰 프로세스를 직접 경험해보는 것입니다. 실제 워크로드(또는 실습용 아키텍처)를 Well-Architected Tool에 등록하고 리뷰를 진행해보면, 시험에서 자주 등장하는 "이 설계의 위험 요소를 식별하라" 유형의 문제에 훨씬 익숙해집니다. Practice Exam 활용법은 **[Practice Exam 전략](../practice-exam-strategy/)** 을 참고하세요.
+SAP-C02 학습의 마지막 단계는 **[도메인 3: 지속적인 개선](../../sap/domain3-continuous-improvement/)** 에서 다루는 Well-Architected Tool 기반 정기 리뷰 프로세스를 직접 경험해보는 것입니다. 실제 워크로드(또는 실습용 아키텍처)를 Well-Architected Tool에 등록하고 리뷰를 진행해보면, 시험에서 자주 등장하는 "이 설계의 위험 요소를 식별하라" 유형의 문제에 훨씬 익숙해집니다. Practice Exam 활용법은 **[Practice Exam 전략](../practice-exam-strategy/)** 을 참고하세요.

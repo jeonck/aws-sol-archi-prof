@@ -30,5 +30,5 @@ weight: 3
 - **Multi-Region**: 리전 전체 장애(드물지만 발생 가능)에도 대응. 비용과 복잡성이 크게 증가하므로 실제 비즈니스 요구사항(RTO/RPO)에 따라 신중히 결정
 
 {{< callout type="info" >}}
-**SAP 연결**: Multi-Region 복원력을 어느 수준까지 구축할지는 DR 전략 4단계(Backup and Restore, Pilot Light, Warm Standby, Multi-Site Active/Active)로 구체화됩니다. 자세한 내용은 [SAP: 재해 복구와 네트워킹](../../sap/disaster-recovery-networking/)에서 다룹니다.
+**SAP 연결**: Multi-Region 복원력을 어느 수준까지 구축할지는 DR 전략 4단계(Backup and Restore, Pilot Light, Warm Standby, Multi-Site Active/Active)로 구체화됩니다. 자세한 내용은 [SAP 도메인 1: 재해 복구와 네트워킹](../../sap/domain1-organizational-complexity/)에서 다룹니다.
 {{< /callout >}}

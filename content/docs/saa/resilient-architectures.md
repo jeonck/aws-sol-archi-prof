@@ -45,5 +45,5 @@ ALB는 자체적으로 여러 AZ에 걸쳐 배치되며, Target Group을 통해 
 | DNS | Route 53 Health Check + Failover 라우팅 |
 
 {{< callout type="warning" >}}
-"고가용성"을 "재해 복구"와 혼동하지 마세요. Multi-AZ는 같은 리전 내 가용성 확보이고, 리전 전체 장애에 대비하려면 별도의 Multi-Region DR 전략이 필요합니다. DR은 [SAP 단계](../../sap/disaster-recovery-networking/)에서 더 깊이 다룹니다.
+"고가용성"을 "재해 복구"와 혼동하지 마세요. Multi-AZ는 같은 리전 내 가용성 확보이고, 리전 전체 장애에 대비하려면 별도의 Multi-Region DR 전략이 필요합니다. DR은 [SAP 도메인 1](../../sap/domain1-organizational-complexity/)에서 더 깊이 다룹니다.
 {{< /callout >}}
