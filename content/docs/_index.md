@@ -9,7 +9,7 @@ sidebar:
 
 ## AWS Solutions Architect, 어떻게 공부해야 할까
 
-AWS는 이론만으로는 실력이 붙지 않습니다. **4개의 지식 축**과 **하나의 실전 축(Well-Architected Framework)**으로 나누어, 매 단계마다 직접 콘솔과 코드로 손을 움직이며 학습하는 것을 전제로 이 로드맵을 구성했습니다.
+AWS는 이론만으로는 실력이 붙지 않습니다. **4개의 지식 축**과 **하나의 실전 축**(Well-Architected Framework)으로 나누어, 매 단계마다 직접 콘솔과 코드로 손을 움직이며 학습하는 것을 전제로 이 로드맵을 구성했습니다.
 
 1. **[AWS 기초](fundamentals)** — 핵심 서비스 개요와 Free Tier 환경에서의 첫 Hands-on
 2. **[Solutions Architect Associate](saa)** — 고가용성·보안·성능/비용 아키텍처 설계, SAA-C03 합격
