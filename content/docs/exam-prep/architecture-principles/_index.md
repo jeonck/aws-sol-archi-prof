@@ -14,3 +14,4 @@ AWS 아키텍처를 설계하고 자격증 시험(SAP-C02 등)을 준비할 때,
 3. **[자동화 금지 영역 4가지와 판단 체크리스트](automation-control-boundaries)** — IAM·보안 그룹, Stateful 마이그레이션, 비용 자동 삭제 등 자동화가 함정이 되는 패턴과 4가지 판단 기준
 4. **[API Gateway 429 오류와 Throttling 전략](api-gateway-throttling)** — 429 vs 502 오류의 원인 차이, Usage Plan 조정·재시도·캐싱을 통한 해결 전략
 5. **[Systems Manager Run Command: 접속이 아니라 폴링이다](ssm-run-command)** — 인바운드 없이 서버를 관리하는 폴링 구조와 IAM Role 기반 신뢰 모델
+6. **[단일 자격 증명으로 멀티 계정 다루기: AssumeRole의 원리](assume-role-single-credentials)** — 권한 위임(Delegation)으로 단일 크리덴셜과 최소 권한을 동시에 만족시키는 구조
