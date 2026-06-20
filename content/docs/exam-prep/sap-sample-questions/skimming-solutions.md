@@ -3,7 +3,7 @@ title: "스키밍(Skimming) 기법을 활용한 10선 상세 풀이 과정"
 weight: 1
 ---
 
-이 페이지는 **[실전 문제 풀이 기술](../real-exam-tactics/)**에서 다룬 **'긴 지문 대응을 위한 스키밍(Skimming) 기술'**을 10개의 샘플 문제에 직접 적용하여, 정답을 도출해내는 사고 과정(Thought Process)을 단계별로 추적합니다.
+이 페이지는 **[실전 문제 풀이 기술](../real-exam-tactics/)**에서 다룬 '**긴 지문 대응을 위한 스키밍(Skimming) 기술**'을 10개의 샘플 문제에 직접 적용하여, 정답을 도출해내는 사고 과정(Thought Process)을 단계별로 추적합니다.
 
 시험장에서 직면하는 시간 부족을 해결하기 위해 아래 3단계 공식에 맞춰 문제를 해독하는 연습을 해보세요.
 
@@ -28,8 +28,8 @@ flowchart TD
 * **D:** Cost Explorer 보고서의 주기적 수동 검토.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"Each business group wants to retain full control of its AWS account"** (핵심 제약 조건): 각 비즈니스 그룹은 자신의 계정에 대해 **완전한 통제권(자율성)**을 유지해야 합니다.
-* **"prevent excessive spending"** (목표): 과도한 비용 지출 예방.
+* "**Each business group wants to retain full control of its AWS account**" (핵심 제약 조건): 각 비즈니스 그룹은 자신의 계정에 대해 **완전한 통제권(자율성)**을 유지해야 합니다.
+* "**prevent excessive spending**" (목표): 과도한 비용 지출 예방.
 
 #### 4단계: 소거 및 도출
 * **A, B 소거:** 특정 인스턴스 유형 사용을 차단하는 SCP(A)나 IAM 정책(B)은 비즈니스 그룹이 요구한 "완전한 계정 통제권 보유"에 위배됩니다. 특정 그룹이 연구/분석용 고스펙 인스턴스를 정상적으로 사용해야 할 권리까지 빼앗게 됩니다.
@@ -51,9 +51,9 @@ flowchart TD
 * **D:** CloudFormation StackSets로 교차 계정 IAM 역할(Cross-Account Role) 배포.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"multiple AWS accounts in an organization"** (배경): 조직 내의 여러 연결된 계정들.
-* **"read-only access across all AWS accounts"** (권한 범위): 모든 계정에 대한 읽기 전용 권한 필요.
-* **"monitoring solution will run in its own AWS account"** (행동 주체): 서드파티 계정(외부 계정)에서 연동되어 들어옴.
+* "**multiple AWS accounts in an organization**" (배경): 조직 내의 여러 연결된 계정들.
+* "**read-only access across all AWS accounts**" (권한 범위): 모든 계정에 대한 읽기 전용 권한 필요.
+* "**monitoring solution will run in its own AWS account**" (행동 주체): 서드파티 계정(외부 계정)에서 연동되어 들어옴.
 
 #### 4단계: 소거 및 도출
 * **A 소거:** AWS SSO(Identity Center) 자격 증명은 대화형 로그인(사람) 중심이며 일시적이라 세션이 만료되면 다시 로그인해야 하므로 자동화된 서드파티 툴 연동에 부적합합니다. 또한 보안 규정상 비밀번호를 넘겨주는 것은 금지됩니다.
@@ -76,8 +76,8 @@ flowchart TD
 * **E:** S3 웹 사이트 호스팅 활성화.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"HTML form that is hosted in a public Amazon S3 bucket"** (상황 1): 사용자가 웹 폼을 여는 출처(Origin)는 S3.
-* **"uses JavaScript to post data to an Amazon API Gateway API endpoint"** (상황 2): JS가 완전히 다른 도메인(API Gateway)으로 비동기 HTTP 요청을 보냄 (Cross-Origin 상황).
+* "**HTML form that is hosted in a public Amazon S3 bucket**" (상황 1): 사용자가 웹 폼을 여는 출처(Origin)는 S3.
+* "**uses JavaScript to post data to an Amazon API Gateway API endpoint**" (상황 2): JS가 완전히 다른 도메인(API Gateway)으로 비동기 HTTP 요청을 보냄 (Cross-Origin 상황).
 
 #### 4단계: 소거 및 도출
 * **B, C 소거:** 서버리스 비용 이점과 요구사항(S3 호스팅)을 EC2로 변경(B)할 필요가 전혀 없으며, 쿼터 제한(C)은 단순 기능 작동 장애와 연관이 없습니다.
@@ -99,8 +99,8 @@ flowchart TD
 * **D:** DynamoDB Strongly Consistent Reads 적용.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"During large surges in traffic"** (유발 조건): 대규모 트래픽 폭증 시에만 현상 발생.
-* **"API Gateway... returning HTTP status code 502 (Bad Gateway) errors"** (에러 유형): API Gateway 자체의 스로틀링(429)이나 시간 초과(504)가 아닌 백엔드(Lambda)의 응답 실패 상태.
+* "**During large surges in traffic**" (유발 조건): 대규모 트래픽 폭증 시에만 현상 발생.
+* "**API Gateway... returning HTTP status code 502 (Bad Gateway) errors**" (에러 유형): API Gateway 자체의 스로틀링(429)이나 시간 초과(504)가 아닌 백엔드(Lambda)의 응답 실패 상태.
 
 #### 4단계: 소거 및 도출
 * **B 소거:** API Gateway의 초당 트래픽 제한(TPS)을 초과한 경우는 API Gateway단에서 스로틀링(HTTP 429)을 던집니다. 또한 쿼터 한도는 실시간으로 Lambda에 의해 동적으로 상향 조절되지 않습니다.
@@ -120,8 +120,8 @@ flowchart TD
 * **C, D:** SSH 키페어 없이 시작 후 Systems Manager Run Command vs Trusted Advisor로 접속.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"block all inbound traffic except HTTPS (port 443)"** (보안 제약 조건): 보안 그룹 인바운드는 오직 HTTPS(443) 포트만 외부에서 접근 허용됨. 22번이나 2222번 포트 등은 인바운드가 모두 차단되어 통과할 수 없음.
-* **"remotely manage"** (목표): 원격 명령 실행 가능해야 함.
+* "**block all inbound traffic except HTTPS (port 443)**" (보안 제약 조건): 보안 그룹 인바운드는 오직 HTTPS(443) 포트만 외부에서 접근 허용됨. 22번이나 2222번 포트 등은 인바운드가 모두 차단되어 통과할 수 없음.
+* "**remotely manage**" (목표): 원격 명령 실행 가능해야 함.
 
 #### 4단계: 소거 및 도출
 * **A, B 소거:** SSH 포트를 2222로 변경하더라도 인바운드 2222 포트를 보안 그룹에서 차단하고 있으므로 접속할 수 없습니다.
@@ -141,8 +141,8 @@ flowchart TD
 * **C, D:** 단일 계정에 IAM 사용자를 집약시키고 타 계정에 임시 권한(AssumeRole)을 행사하는 크로스 계정 모델.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"Developers must have no access to production infrastructure"** (권한 제약): 개발자는 운영에 접근 금지.
-* **"All users must have a single set of AWS credentials"** (사용자 제약): 모든 사용자는 자격 증명 세트를 단 **1개**만 소유해야 함.
+* "**Developers must have no access to production infrastructure**" (권한 제약): 개발자는 운영에 접근 금지.
+* "**All users must have a single set of AWS credentials**" (사용자 제약): 모든 사용자는 자격 증명 세트를 단 **1개**만 소유해야 함.
 
 #### 4단계: 소거 및 도출
 * **A, B 소거:** 사용자가 개발 계정과 운영 계정 양쪽에 IAM 유저(Credentials)를 각자 가지고 로그인하게 유도하므로 "단일 자격 증명 세트(single set)" 요구사항에 어긋납니다.
@@ -163,8 +163,8 @@ flowchart TD
 * **C, D:** Kinesis Shard 비율을 10:1 vs 2:1로 다르게 지정.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"each device sends between 50 KB and 450 KB of data each second"** (샤드 용량 한계): 디바이스당 최대 초당 450KB 전송. Kinesis 단일 샤드는 최대 1MB/s(1,000KB/s) 인입 한계를 지님.
-* **"average of 10 outlying values every hour", "runs a 30-second process"** (컴퓨팅 빈도): 예외 데이터는 시간당 10개만 들어오고, 처리 시간은 각 30초에 불과함.
+* "**each device sends between 50 KB and 450 KB of data each second**" (샤드 용량 한계): 디바이스당 최대 초당 450KB 전송. Kinesis 단일 샤드는 최대 1MB/s(1,000KB/s) 인입 한계를 지님.
+* "**average of 10 outlying values every hour**", "**runs a 30-second process**" (컴퓨팅 빈도): 예외 데이터는 시간당 10개만 들어오고, 처리 시간은 각 30초에 불과함.
 
 #### 4단계: 소거 및 도출
 * **B 정답 (컴퓨팅 비용):** 1시간당 처리해야 할 총연산 시간은 `10개 * 30초 = 300초(5분)`에 불과합니다. 이를 처리하기 위해 EC2 인스턴스 2대를 24시간 내내 대기시키는 것은 매우 낭비입니다. SQS 메시지가 올 때만 켜져서 연산하는 Lambda(B)를 적용하면 사실상 대기 컴퓨팅 비용을 0으로 만들어 비용을 극적으로 낮춥니다. (A, E 소거)
@@ -184,7 +184,7 @@ flowchart TD
 * **D:** Lambda의 예약된 동시성(Reserved Concurrency) 하향.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"increased request rate overwhelmed the third-party affiliate"** (핵심 문제): 동시 요청량의 폭증으로 상대 측(Affiliate API)이 병목을 겪어 요청을 거부/실패함. 즉, 클라이언트단에서 나가는 요청 속도를 안전하게 조율(Rate Limiting)해야 함.
+* "**increased request rate overwhelmed the third-party affiliate**" (핵심 문제): 동시 요청량의 폭증으로 상대 측(Affiliate API)이 병목을 겪어 요청을 거부/실패함. 즉, 클라이언트단에서 나가는 요청 속도를 안전하게 조율(Rate Limiting)해야 함.
 
 #### 4단계: 소거 및 도출
 * **A 소거:** 단순히 Lambda를 비동기 호출만 하면 EC2 인스턴스 20개에서 들어오는 모든 호출 수만큼 Lambda가 동시 병렬 실행되어 결국 제휴사 서버로 전달되는 동시 요청 수는 그대로 유지되므로 해결이 불가능합니다.
@@ -206,8 +206,8 @@ flowchart TD
 * **E, F:** 관계형 DB를 DynamoDB 글로벌 테이블로 완전 전환 vs Aurora Global DB + 쓰기 전달(Write Forwarding) 사용.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"LEAST change to the architecture"** (제약 사항): 구조적 개편 최소화.
-* **"active-active configuration"** (목표): 양방향 리전 서비스.
+* "**LEAST change to the architecture**" (제약 사항): 구조적 개편 최소화.
+* "**active-active configuration**" (목표): 양방향 리전 서비스.
 
 #### 4단계: 소거 및 도출
 * **E 소거:** 현재 사용 중인 관계형 데이터베이스(Aurora MySQL)를 완전히 아키텍처가 다른 NoSQL인 DynamoDB 글로벌 테이블(E)로 변경하려면 애플리케이션의 전체 데이터 모델과 쿼리 로직을 새로 작성해야 하므로 최소 변경 원칙에 정면 위배됩니다.
@@ -226,13 +226,13 @@ flowchart TD
 * **의도:** 성능을 올리며 운영 오버헤드(관리 공수)를 최소화할 수 있는 인프라 현대화 조합 2가지를 선별합니다.
 
 #### 2단계: 선지 스캔 (대상 서비스 비교)
-* **A, C:** 수동 다중 EC2 MySQL 구성 vs Aurora Serverless 마이그레이션.
+* **A, C:** 수동 다중 EC2 MySQL vs Aurora Serverless 마이그레이션.
 * **B, E:** Windows 웹 인스턴스를 ALB 배후로 이동 vs ALB를 자체 구축 로드밸런서로 교체.
 * **D:** 전체 스택을 ARM 기반 Graviton2 인스턴스로 전환.
 
 #### 3단계: 지문 힌트 단어 및 제약 조건
-* **"Windows-based web tier"** (제약 조건): 웹 서버가 윈도우(Windows) 기반으로 가동 중임.
-* **"minimize the operational overhead"** (핵심 지표): 인프라 관리 부담 최소화.
+* "**Windows-based web tier**" (제약 조건): 웹 서버가 윈도우(Windows) 기반으로 가동 중임.
+* "**minimize the operational overhead**" (핵심 지표): 인프라 관리 부담 최소화.
 
 #### 4단계: 소거 및 도출
 * **A, E 소거:** 수동 다중 EC2 DB 구성(A)이나 자체 관리형 로드밸런서 개발(E)은 인프라 관리 포인트를 엄청나게 확장시켜 오버헤드를 높이므로 소거합니다.
