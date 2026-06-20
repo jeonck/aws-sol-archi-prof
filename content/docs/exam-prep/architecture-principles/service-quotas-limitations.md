@@ -3,9 +3,12 @@ title: "서비스 할당량(Quota) 자동 증설의 한계와 제어 철학"
 weight: 1
 ---
 
-AWS의 서비스 할당량(Quota)을 Lambda 함수를 사용하여 실시간으로 자동으로 증가시키는 것은 기본적으로 불가능합니다. 
+> **"Create a Lambda function that will increase the quota when the quota is reached."**
+> *(할당량에 도달했을 때 이를 증가시키는 Lambda 함수를 생성한다.)*
 
-이 문서에서는 왜 이러한 제약이 존재하는지, 그 뒤에 숨겨진 AWS의 설계 철학과 올바른 아키텍처적 해결 방안에 대해 정리합니다.
+AWS Certified Solutions Architect - Professional (SAP-C02) 시험을 치르다 보면 자주 접하게 되는 매력적이지만 치명적인 오답 선지입니다. 많은 엔지니어들이 'Lambda를 통한 자동화'라는 단어에 매료되어 이 보기를 정답으로 선택하지만, AWS의 설계 원칙과 철학적 관점에서는 이것이 불가능할 뿐만 아니라 권장되지 않는 오답 함정(Trap)입니다.
+
+이 문서에서는 왜 이 보기가 오답이 되는지, 그 뒤에 숨겨진 AWS의 제어 철학과 올바른 아키텍처적 해결 방안에 대해 정리합니다.
 
 ---
 
