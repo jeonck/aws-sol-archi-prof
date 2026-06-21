@@ -8,7 +8,7 @@ weight: 5
 {{< callout type="info" >}}
 시험 출제 근거가 되는 AWS 공식 화이트페이퍼만 따로 모아 우선순위와 핵심 내용을 정리한 페이지가 있습니다. **[SAP 시험 대비 필수 화이트페이퍼 5선](sap-whitepapers/)** 에서 확인하세요.
 
-화이트페이퍼 대신 "어떤 서비스를 깊게 알아야 하는가"부터 보고 싶다면, **[시험에 반복 출제되는 핵심 서비스 5가지 영역](core-services-deep-dive/)** 을 먼저 읽는 것도 좋습니다.
+화이트페이퍼 대신 "어떤 서비스를 깊게 알아야 하는가"부터 보고 싶다면, **[시험에 반복 출제되는 핵심 서비스 5가지 영역](core-services-deep-dive/)** 과 **[시험에 자주 나오는 네트워킹 서비스와 활용 사례](networking-services-in-exam/)** 를 먼저 읽는 것도 좋습니다.
 {{< /callout >}}
 
 ## AWS Skill Builder — 4단계 Exam Prep Plan
