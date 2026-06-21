@@ -15,3 +15,4 @@ AWS 아키텍처를 설계하고 자격증 시험(SAP-C02 등)을 준비할 때,
 4. **[Systems Manager Run Command: 접속이 아니라 폴링이다](ssm-run-command)** — 인바운드 없이 서버를 관리하는 폴링 구조와 IAM Role 기반 신뢰 모델
 5. **[단일 자격 증명으로 멀티 계정 다루기: AssumeRole의 원리](assume-role-single-credentials)** — 권한 위임(Delegation)으로 단일 크리덴셜과 최소 권한을 동시에 만족시키는 구조
 6. **[운영 우수성 관점의 아키텍처 핵심 원리: 관리형 서비스와 서버리스 우선](operational-excellence-modernization)** — 레거시 현대화 시 "운영 오버헤드 최소화"를 판단하는 두 가지 우선순위
+7. **[최소한의 변경(LEAST Change) 원칙: Active-Active 멀티 리전 확장](least-change-active-active)** — 운영 우수성·신뢰성·비용 최적화가 동시에 작용해 "더 좋은 기술"보다 "더 적은 변경"이 정답이 되는 사례
