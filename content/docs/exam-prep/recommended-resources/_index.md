@@ -5,6 +5,12 @@ weight: 5
 
 자료가 너무 많으면 오히려 학습 속도가 떨어집니다. 이 페이지는 검증된 자료를 역할별로 좁혀서 추천하고, 각 자료를 학습 흐름의 어느 시점에 사용해야 하는지 안내합니다.
 
+{{< callout type="info" >}}
+시험 출제 근거가 되는 AWS 공식 화이트페이퍼만 따로 모아 우선순위와 핵심 내용을 정리한 페이지가 있습니다. **[SAP 시험 대비 필수 화이트페이퍼 5선](sap-whitepapers/)** 에서 확인하세요.
+
+화이트페이퍼 대신 "어떤 서비스를 깊게 알아야 하는가"부터 보고 싶다면, **[시험에 반복 출제되는 핵심 서비스 5가지 영역](core-services-deep-dive/)** 을 먼저 읽는 것도 좋습니다.
+{{< /callout >}}
+
 ## AWS Skill Builder — 4단계 Exam Prep Plan
 
 [AWS Skill Builder](https://skillbuilder.aws/)는 AWS가 공식 운영하는 학습 플랫폼으로, SAA-C03와 SAP-C02 모두 전용 **Exam Prep Plan**을 제공합니다. 이 플랜은 4단계로 구성되어 있고, 순서대로 진행하는 것이 설계 의도입니다.
@@ -35,9 +41,9 @@ Skill Builder의 일부 콘텐츠는 무료지만, Exam Prep Plan의 Practice Ex
 - SAA-C03, SAP-C02 모두 별도 문제 세트가 있으며, 도메인별 점수 분석 리포트를 제공해 약점 파악에 유용합니다.
 - **[Practice Exam 전략](../practice-exam-strategy/)** 에서 설명한 매주 루틴에 가장 적합한 자료 중 하나입니다.
 
-## Well-Architected Framework Whitepaper
+## AWS 공식 화이트페이퍼
 
-[AWS Well-Architected Framework 공식 백서](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)는 무료로 제공되며, SAA와 SAP 모두에서 직접적으로 출제 근거가 되는 핵심 자료입니다. 6 Pillars(운영 우수성, 보안, 안정성, 성능 효율성, 비용 최적화, 지속가능성) 각각의 설계 원칙을 공식 용어로 정리하고 있어, 시험에서 등장하는 "trade-off 판단" 문제의 사고 틀을 그대로 제공합니다. 시험 직전 1~2회독을 권장합니다.
+[AWS Well-Architected Framework 공식 백서](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)를 비롯해 멀티 계정 거버넌스, HA/DR, 서버리스 아키텍처, 마이그레이션 전략 화이트페이퍼는 SAA와 SAP 모두에서 직접적으로 출제 근거가 되는 핵심 자료입니다. 어떤 백서를 어떤 순서로, 어떤 핵심 포인트 위주로 읽어야 하는지는 **[SAP 시험 대비 필수 화이트페이퍼 5선](sap-whitepapers/)** 에서 정리했습니다. 시험 직전 1~2회독을 권장합니다.
 
 ## re:Invent 세션
 
