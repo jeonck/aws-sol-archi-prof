@@ -16,6 +16,43 @@ weight: 6
 
 AWS에서 단일 크리덴셜로 멀티 계정을 제어하는 것은 사용자를 물리적으로 각 계정에 생성하는 방식이 아니라, **권한 위임(Delegation)** 을 통해 이루어집니다.
 
+### IAM User, Role, IAM 서비스(STS)의 관계
+
+흐름을 보기 전에, 세 구성 요소가 어디에 "위치"하고 서로 어떻게 연결되는지부터 정리하면 이해가 훨씬 쉬워집니다.
+
+```mermaid
+graph LR
+    subgraph DevAcc["개발 계정"]
+        User["IAM User<br/>개발자의 고유 자격 증명<br/>(인증의 근거)"]
+    end
+
+    subgraph IAMService["AWS IAM / STS<br/>(중앙 인증·위임 서비스)"]
+        STS["AssumeRole API"]
+    end
+
+    subgraph ProdAcc["운영 계정"]
+        Trust["Trust Policy<br/>'개발 계정의 User를<br/>신뢰한다'는 선언"]
+        Role["IAM Role<br/>사전에 정의된 역할"]
+        Policy["Permission Policy<br/>이 역할로 할 수 있는 일"]
+    end
+
+    User -- "① 내 자격 증명으로<br/>AssumeRole 호출" --> STS
+    STS -- "② 신뢰 여부 확인" --> Trust
+    Trust -. "Role에 부착됨" .-> Role
+    Role -- "③ 권한 정의 참조" --> Policy
+    STS -- "④ 임시 보안 자격 증명 발급<br/>(Role의 권한을 가짐)" --> User
+```
+
+- **IAM User**는 개발 계정에만 존재하는 "신원(누구인가)"입니다. 운영 계정에는 이 사용자의 사본이 전혀 없습니다.
+- **IAM Role**은 운영 계정에 미리 정의된 "권한 묶음(무엇을 할 수 있는가)"입니다. Role 자체는 누구의 것도 아니며, Trust Policy가 허용한 누군가가 빌려 쓸 수 있을 뿐입니다.
+- **AWS IAM/STS**는 이 둘 사이를 중개하는 서비스입니다. User의 신원과 Role의 Trust Policy를 대조해 허용 여부를 결정하고, 허용되면 Role의 권한을 담은 임시 자격 증명을 발급합니다.
+
+{{< callout type="info" >}}
+헷갈리기 쉬운 부분: User는 Role을 "소유"하는 것이 아니라 잠깐 "빌리는" 것입니다. AssumeRole이 끝나도 Role은 그대로 운영 계정에 남아 있고, User도 그대로 개발 계정에 남아 있습니다. 둘 사이를 STS가 발급한 임시 자격 증명이 일시적으로만 연결해줄 뿐입니다.
+{{< /callout >}}
+
+이 관계를 시간 순서로 풀어보면 다음과 같습니다.
+
 ```mermaid
 sequenceDiagram
     participant User as 개발자(IAM User)<br/>개발 계정에만 존재
